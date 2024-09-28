@@ -1,0 +1,429 @@
+﻿<Window
+    x:Class="Calculator.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Calculator"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Calculator"
+    Width="330"
+    Height="700"
+    AllowsTransparency="True"
+    Background="Transparent"
+    Icon="assets/icons/calculator.ico"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border
+        Padding="20"
+        Background="Black"
+        CornerRadius="50">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.15*" />
+                <RowDefinition Height="0.4*" />
+                <RowDefinition Height="0.1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1.6*" />
+            </Grid.RowDefinitions>
+            <Grid
+                Grid.Row="0"
+                Margin="0,0,10,0"
+                HorizontalAlignment="Right">
+                <Button
+                    x:Name="ButonClose"
+                    Width="20"
+                    Height="20"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Click="ButonClose_Click"
+                    Style="{StaticResource button}">
+                    <Image
+                        Height="12"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        Source="assets/icons/close.png" />
+                </Button>
+
+            </Grid>
+            <Border
+                Grid.Row="1"
+                Width="265"
+                Height="40"
+                Padding="15,10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="AliceBlue"
+                CornerRadius="20">
+                <TextBlock
+                    x:Name="txtDisplay"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Center"
+                    FontSize="20"
+                    Text="0" />
+            </Border>
+            <Border Grid.Row="2" />
+            <Border Grid.Row="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <Grid
+                        Grid.Row="0"
+                        Width="265"
+                        Height="60"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            Grid.Column="0"
+                            Click="btx2_Click"
+                            Content="x²"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="1" />
+                        <Button
+                            Grid.Column="2"
+                            Click="btx3_Click"
+                            Content="x³"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="3" />
+                        <Button
+                            Grid.Column="4"
+                            Click="btxn_Click"
+                            Content="xⁿ"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="5" />
+                        <Button
+                            Grid.Column="6"
+                            Click="btnNegativeOrPositive_Click"
+                            Content="+/-"
+                            Style="{StaticResource buttonNumber}" />
+
+                    </Grid>
+                    <Grid Grid.Row="1" />
+
+                    <Grid
+                        Grid.Row="2"
+                        Width="265"
+                        Height="60"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            Grid.Column="0"
+                            Click="bt2x_Click"
+                            Content="√x "
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="1" />
+                        <Button
+                            Grid.Column="2"
+                            Click="bt3x_Click"
+                            Content="³√x "
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="3" />
+                        <Button
+                            Grid.Column="4"
+                            Click="btnx_Click"
+                            Content="ⁿ√x"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="5" />
+                        <Button
+                            Grid.Column="6"
+                            Click="bt100x_Click"
+                            Content="x/100"
+                            Style="{StaticResource buttonNumber}" />
+
+                    </Grid>
+                    <Grid Grid.Row="3" />
+                    <Grid
+                        Grid.Row="4"
+                        Width="265"
+                        Height="60"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            Grid.Column="0"
+                            Click="btsin_Click"
+                            Content="sinx"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="1" />
+                        <Button
+                            Grid.Column="2"
+                            Click="btcos_Click"
+                            Content="cosx"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="3" />
+                        <Button
+                            Grid.Column="4"
+                            Click="btcos_Click"
+                            Content="tanx"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="5" />
+                        <Button
+                            Grid.Column="6"
+                            Click="bt1x_Click"
+                            Content="1/x"
+                            Style="{StaticResource buttonNumber}" />
+
+                    </Grid>
+
+                </Grid>
+            </Border>
+
+            <Border Grid.Row="4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+
+                    <Grid
+                        Grid.Row="0"
+                        Width="265"
+                        Height="60"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            x:Name="ButtonAc"
+                            Grid.Column="0"
+                            Click="btAC_Click"
+                            Content="AC"
+                            Style="{StaticResource buttonAc}" />
+                        <Grid Grid.Row="1" />
+                        <Button
+                            x:Name="ButtonDel"
+                            Grid.Column="2"
+                            Click="btDelete_Click"
+                            Content="DEL"
+                            Style="{StaticResource buttonDel}" />
+                        <Grid Grid.Row="3" />
+                        <Button
+                            Grid.Column="4"
+                            Click="btmi_Click"
+                            Content="/"
+                            Style="{StaticResource buttonOperation}" />
+
+
+                    </Grid>
+                    <Grid Grid.Row="1" />
+
+                    <Grid
+                        Grid.Row="2"
+                        Width="265"
+                        Height="60"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            Grid.Column="0"
+                            Click="btnNumber_Click"
+                            Content="7"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="1" />
+                        <Button
+                            Grid.Column="2"
+                            Click="btnNumber_Click"
+                            Content="8"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="3" />
+                        <Button
+                            Grid.Column="4"
+                            Click="btnNumber_Click"
+                            Content="9"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="5" />
+                        <Button
+                            Grid.Column="6"
+                            Click="btm_Click"
+                            Content="X"
+                            Style="{StaticResource buttonOperation}" />
+
+                    </Grid>
+                    <Grid Grid.Row="3" />
+                    <Grid
+                        Grid.Row="4"
+                        Width="265"
+                        Height="60"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            Grid.Column="0"
+                            Click="btnNumber_Click"
+                            Content="4"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="1" />
+                        <Button
+                            Grid.Column="2"
+                            Click="btnNumber_Click"
+                            Content="5"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="3" />
+                        <Button
+                            Grid.Column="4"
+                            Click="btnNumber_Click"
+                            Content="6"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="5" />
+                        <Button
+                            Grid.Column="6"
+                            Click="btp_Click"
+                            Content="+"
+                            Style="{StaticResource buttonOperation}" />
+
+                    </Grid>
+                    <Grid Grid.Row="5" />
+                    <Grid
+                        Grid.Row="6"
+                        Width="265"
+                        Height="60"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            Grid.Column="0"
+                            Click="btnNumber_Click"
+                            Content="1"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="1" />
+                        <Button
+                            Grid.Column="2"
+                            Click="btnNumber_Click"
+                            Content="2"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="3" />
+                        <Button
+                            Grid.Column="4"
+                            Click="btnNumber_Click"
+                            Content="3"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="5" />
+                        <Button
+                            Grid.Column="6"
+                            Click="bts_Click"
+                            Content="-"
+                            Style="{StaticResource buttonOperation}" />
+
+                    </Grid>
+                    <Grid Grid.Row="7" />
+                    <Grid
+                        Grid.Row="8"
+                        Width="265"
+                        Height="60"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Button
+                            Grid.Column="0"
+                            Click="btnNumber_Click"
+                            Content="0"
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="1" />
+                        <Button
+                            Grid.Column="2"
+                            Click="btdot_Click"
+                            Content="."
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="3" />
+                        <Button
+                            Grid.Column="4"
+                            Click="btass_Click"
+                            Content="="
+                            Style="{StaticResource buttonNumber}" />
+                        <Grid Grid.Row="5" />
+                        <Button
+                            Grid.Column="6"
+                            Click="btper_Click"
+                            Content="%"
+                            Style="{StaticResource buttonOperation}" />
+                    </Grid>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</Window>
